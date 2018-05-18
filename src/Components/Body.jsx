@@ -28,6 +28,7 @@ export default class Body extends Component {
         "https://maps.googleapis.com/maps/api/place/textsearch/json?query=attractions+in+" +
           this.state.city +
           "&key=AIzaSyCX9EPP7EsRb9xbWmupveSgdW2l_AJ9JGU",
+
         {
           mode: "no-cors",
           header: {
@@ -46,18 +47,6 @@ export default class Body extends Component {
       .catch(function(err) {
         console.log("err", err);
       });
-
-
-      axios
-        .post(
-          "api/google",
-          {
-            sights: this.state.city
-          }
-        ).then(response =>{
-          console.log(response);
-        })
-
   }
 
   render() {
